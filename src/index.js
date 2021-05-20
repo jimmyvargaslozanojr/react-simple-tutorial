@@ -16,7 +16,6 @@ const secondbook = {
   author : 'Shannon Olsen',
 }
 
-
 // const title = 'I Love You to the Moon and Back';
 // const author = 'Amelia Hepworth';
 // const img = 'https://images-na.ssl-images-amazon.com/images/I/81NdWmk6aUL._AC_UL200_SR200,200_.jpg';
@@ -24,17 +23,20 @@ const secondbook = {
 function BookList() {
   return (  
       <section className="booklist">
-        <Book img={firstbook.img} title={firstbook.title} author={firstbook.author}/>
+        <Book img={firstbook.img} title={firstbook.title} author={firstbook.author}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, quo quas omnis voluptates, quidem facilis voluptas iusto dolore consectetur, qui vitae in. Fugit similique veniam ratione porro, illum aperiam velit?</Book>
+
         <Book img={secondbook.img} title={secondbook.title} author={secondbook.author}/>
       </section>
   );
 }
 
-const Book = (props) => {
+const Book = ({img,title,author,children}) => {
+  // const {img,title, author} = props;
   return <article className="book">
-    <img src={props.img} alt=""/>
-    <h1>{props.title}</h1>
-    <h4>{props.author}</h4>
+    <img src={img} alt=""/>
+    <h1>{title}</h1>
+    <h4>{author}</h4>
+    {children}
   </article>
 }
 
